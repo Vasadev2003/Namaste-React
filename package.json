@@ -1,0 +1,30 @@
+{
+  "name": "inception",
+  "version": "1.0.0",
+  "description": "\"mastery of react\"",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "vasanth"
+  ],
+  "author": "vasanth with akashay",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vasadev2003/Namaste-React.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vasadev2003/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/Vasadev2003/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

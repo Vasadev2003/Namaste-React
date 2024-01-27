@@ -43,3 +43,4 @@ React.createElement("div",{id:"child-1"},[React.createElement("h1",{id:"hi iam 1
 
 root.render(parent);
 
+console.log("vasanth");

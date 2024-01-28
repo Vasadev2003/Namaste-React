@@ -1,16 +1,21 @@
 import React from "react"
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const parent = React.createElement("div",{id:"parent"},
+const Name = ()=> <h1 id="jsx" className = "vasanth">Hi this from JSX</h1>
 
-[React.createElement("div",{id:"child-1"},[React.createElement("h1",{id:"hi iam 1"},"Iam Child One"),React.createElement("h2",{id:"hi iam 2"},"vvvvvvvvvv")]),
-React.createElement("div",{id:"child-1"},[React.createElement("h1",{id:"hi iam 1"},"Iam Child One"),React.createElement("h2",{id:"hi iam 2"},"Iam Child Two")])
-]
+// Namaste React Functional Component
 
+const FunctionalComponent = () =>(
+    <div id="main div">
+        {console.log("hi this is from curly braces")}
+        <Name />
+        <h1 className = "child">
+            Namaste React Functional Component
+        </h1>
+    </div>
 )
 
-root.render(parent);
-
+root.render(<FunctionalComponent/>);
 

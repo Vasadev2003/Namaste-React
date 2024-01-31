@@ -1,0 +1,53 @@
+header {
+    display : flex;
+    justify-content : space-between;
+    border : 2px solid grey;
+    padding : 10px
+}
+
+.image{
+    width : 120px;
+}
+
+ul{
+    display : flex;
+    gap : 28px;
+    align-items : center;
+}
+
+ul li{
+    list-style-type : none;
+    font-size : 20px;
+}
+
+.rescard img{
+    width: 150px;
+}
+
+.rescard h1{
+    font-size: 25px;
+}
+
+.rescard h2  {
+    font-size: 20px;
+}
+
+.rescard {
+    
+    width: 150px;
+    margin : 20px;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rescard:hover {
+    border: 2px solid rgb(175, 165, 165);
+    cursor: pointer;
+}
+
+.rescontainer{
+    display: flex;
+    flex-wrap: wrap;
+}

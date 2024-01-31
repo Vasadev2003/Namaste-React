@@ -46,7 +46,15 @@ const hotelList = [{
     rating : "4.5",
     time : "25 minutes"
 
-}]
+},
+{
+    name : "Shanthi Social Service",
+    cusine : "Veg biriyani",
+    rating : "4.5",
+    time : "25 minutes"
+}
+
+]
 
 const ResCard = (props) =>{
     const {resName} = props;
@@ -68,9 +76,9 @@ const Body = () =>{
             <div className = "search">Search</div>
             <div className="rescontainer">
                 {
-                    hotelList.map((item)=>
+                    hotelList.map((item,index)=>
                         (
-                            <ResCard resName ={item}/>
+                            <ResCard key = {index} resName ={item}/>
                         )
                     )
                 }

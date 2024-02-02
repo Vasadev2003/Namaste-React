@@ -21,25 +21,33 @@ ul li{
 }
 
 .rescard img{
-    width: 150px;
+    width: 120px;
+    padding-top: 10px;
+    
 }
 
 .rescard h1{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .rescard h2  {
-    font-size: 20px;
+    font-size: 15px;
+}
+
+.rescard h3 {
+    font-size: 15px;
 }
 
 .rescard {
     
-    width: 150px;
-    margin : 20px;
-    display : flex;
+    width: 190px;
+    margin: 10px;
+    margin-left: 10px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: antiquewhite;
 }
 
 .rescard:hover {
@@ -50,8 +58,31 @@ ul li{
 .rescontainer{
     display: flex;
     flex-wrap: wrap;
+   
+    justify-content: center;
+    align-items: center;
 }
 
 .button{
     margin: 20px;
+}
+
+.shimmerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.shimmer{
+    height: 200px;
+    width: 190px;
+    margin: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: antiquewhite;
 }

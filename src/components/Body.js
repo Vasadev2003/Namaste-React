@@ -6,40 +6,58 @@ import Shimmer from "./Shimmer";
 const Body = () =>{
 
     let [hotel,setHotel] = useState([]);
+    let [filteredRes,setFilteredRes] = useState([]);
+    let [searchText ,setSearchText] = useState("");
 
     useEffect(()=>{
         fetchData();
     },[])
     
-
+    console.log("headser reere")
     async function fetchData(){
-        let data =  await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.000658&lng=77.0295709&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        let data =  await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.081872553043636&lng=80.264821818926&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 
         let json = await data.json();
         console.log(json);
         const mainData = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
         setHotel(mainData);
+        setFilteredRes(mainData);
     }
 
-    if(hotel.length === 0){
-        return (<Shimmer/>)
-    }
     
-    return (
+    return (hotel.length === 0 ? <Shimmer/> :
         <div className = "body">
-            <div className = "button">
+            <div className="filter">
+                <input 
+                type="text" 
+                value={searchText} 
+                onChange ={(e)=>{
+                    setSearchText(e.target.value); 
+                }}
+                />
+
+                <button 
+                    onClick = {()=>{
+                    console.log(searchText);
+                    const filtered = hotel.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                    setFilteredRes(filtered);
+                }}>Search</button>
+            </div>
+            
+            
+         <div className = "button">
               <button onClick = {
                 ()=>{
                     
-                let filter = hotel.filter((res) => res.info.avgRating >= 4.5);
-                setHotel(filter);
+                let filter = hotel.filter((res) => res.info.avgRating >= 4.2);
+                setFilteredRes(filter);
                  
             }
                  }>Top Rated</button>
                 </div>
             <div className="rescontainer">
                 {
-                    hotel.map((item,index)=>
+                    filteredRes.map((item,index)=>
                         (
                             <ResCard key = {index} resName ={item.info}/>
                         )

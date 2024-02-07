@@ -87,3 +87,13 @@ ul li{
     background-color: antiquewhite;
 }
 
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.MenuCard h1,p{
+    text-align: center;
+}
+

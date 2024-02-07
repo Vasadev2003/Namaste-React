@@ -2,7 +2,8 @@
 import ResCard from "./Rescard";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
-
+import { CARD_API } from "../utils/constants";
+import { Link } from "react-router-dom";
 const Body = () =>{
 
     let [hotel,setHotel] = useState([]);
@@ -13,9 +14,9 @@ const Body = () =>{
         fetchData();
     },[])
     
-    console.log("headser reere")
+  
     async function fetchData(){
-        let data =  await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.081872553043636&lng=80.264821818926&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        let data =  await fetch(CARD_API);
 
         let json = await data.json();
         console.log(json);
@@ -57,9 +58,10 @@ const Body = () =>{
                 </div>
             <div className="rescontainer">
                 {
-                    filteredRes.map((item,index)=>
+                    filteredRes.map((item)=>
                         (
-                            <ResCard key = {index} resName ={item.info}/>
+                            <Link key = {item.info.id} to={"/restaurant/"+item.info.id}> <ResCard  resName ={item.info}/></Link>
+                           
                         )
                     )
                 }

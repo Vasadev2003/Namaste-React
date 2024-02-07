@@ -5,3 +5,6 @@ export const LOGO_URL = "https://img.freepik.com/free-psd/isolated-hamburger-wit
 export const CARD_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 
+export const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.081872553043636&lng=80.264821818926&restaurantId=";
+
+export const CARD_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.081872553043636&lng=80.264821818926&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";

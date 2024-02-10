@@ -1,11 +1,30 @@
+import AboutClass from "./UserClass";
+import React from "react";
 
+class About extends React.Component{
+    
+    constructor(props){
+        super(props)
+        console.log("Parent Constructor");
+    }
 
-const About = ()=>{
-    return (
-        <div>
-            <h1>Welcome to the about us page</h1>
-        </div>
-    )
+    componentDidMount(){
+        console.log("Parent Mount");
+    }
+
+    render(){
+        console.log("Parent Render");
+        return (
+            <div>
+            <AboutClass />
+           
+            </div>
+            
+        )
+ 
+    }
 }
+
+
 
 export default About;

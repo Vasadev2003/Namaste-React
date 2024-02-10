@@ -4,6 +4,7 @@ import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { CARD_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () =>{
 
     let [hotel,setHotel] = useState([]);
@@ -25,6 +26,14 @@ const Body = () =>{
         setFilteredRes(mainData);
     }
 
+     const onlineStatus = useOnlineStatus();
+      if(onlineStatus===false){
+        return(
+            <div>
+                <h1>Oh my god!!!,Sorry You Are Offline</h1>
+            </div>
+        )
+      }
     
     return (hotel.length === 0 ? <Shimmer/> :
         <div className = "body">

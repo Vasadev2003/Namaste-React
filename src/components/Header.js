@@ -7,9 +7,9 @@ const Header = () =>{
   const [btnName , setButtonName] = useState("Login")
   const onlineStatus = useOnlineStatus();
     return (
-    <header>
-        <img src={LOGO_URL} className="image"></img>
-      <ul>
+    <header className="flex justify-between items-center bg-blue-100 shadow-xl w-[100%] ">
+        <img src={LOGO_URL} className="w-[120px] h-[120px]" ></img>
+      <ul className="flex items-center m-10 gap-4">
         <li>
          Online Status :  {(onlineStatus?"✅":"🟥")}
         </li>
@@ -22,6 +22,9 @@ const Header = () =>{
         <li>Cart</li>
         <li >
          <Link to ="/contactus"> Contact Us</Link>
+          </li>
+          <li >
+         <Link to ="/groceries"> Grocery Us</Link>
           </li>
         <button onClick = {()=>{
           (btnName === "Login") ? setButtonName("Logout"):setButtonName("Login");

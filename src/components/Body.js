@@ -37,8 +37,8 @@ const Body = () =>{
     
     return (hotel.length === 0 ? <Shimmer/> :
         <div className = "body">
-            <div className="filter">
-                <input 
+            <div className="flex m-10 gap-5">
+                <input className="p-2 rounded-2xl bg-emerald-50 "
                 type="text" 
                 value={searchText} 
                 onChange ={(e)=>{
@@ -47,6 +47,7 @@ const Body = () =>{
                 />
 
                 <button 
+                className="p-2 rounded-2xl bg-sky-500/50 text-[15px] text-white"
                     onClick = {()=>{
                     console.log(searchText);
                     const filtered = hotel.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -55,8 +56,8 @@ const Body = () =>{
             </div>
             
             
-         <div className = "button">
-              <button onClick = {
+         <div>
+              <button className = " bg-sky-500/50 text-[15px] text-white ml-10 p-2 rounded-2xl"  onClick = {
                 ()=>{
                     
                 let filter = hotel.filter((res) => res.info.avgRating >= 4.2);
@@ -65,7 +66,7 @@ const Body = () =>{
             }
                  }>Top Rated</button>
                 </div>
-            <div className="rescontainer">
+            <div className="flex flex-wrap gap-7 justify-around items-center mt-10">
                 {
                     filteredRes.map((item)=>
                         (

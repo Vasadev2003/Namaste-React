@@ -7,7 +7,7 @@ const Header = () =>{
   const [btnName , setButtonName] = useState("Login")
   const onlineStatus = useOnlineStatus();
     return (
-    <header className="flex justify-between items-center bg-blue-100 shadow-xl w-[100%] ">
+    <header className="flex justify-between items-center bg-blue-100 shadow-xl w-[100%]  ">
         <img src={LOGO_URL} className="w-[120px] h-[120px]" ></img>
       <ul className="flex items-center m-10 gap-4">
         <li>

@@ -21,7 +21,7 @@ const Body = () =>{
 
         let json = await data.json();
         console.log(json);
-        const mainData = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+        const mainData = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
         setHotel(mainData);
         setFilteredRes(mainData);
     }
@@ -36,7 +36,7 @@ const Body = () =>{
       }
     
     return (hotel.length === 0 ? <Shimmer/> :
-        <div className = "body">
+        <div className = "bg-indigo-200">
             <div className="flex m-10 gap-5">
                 <input className="p-2 rounded-2xl bg-emerald-50 "
                 type="text" 

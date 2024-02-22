@@ -15,7 +15,7 @@ import { createBrowserRouter,Outlet,RouterProvider }from "react-router-dom"
 
 const AppLayout = () =>{
     return(
-        <div className ="main">
+        <div className ="bg-indigo-200">
         <Header></Header>
         <Outlet />
         </div>

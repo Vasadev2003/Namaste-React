@@ -1,16 +1,17 @@
 
 import ResCard from "./Rescard";
-import {useState,useEffect} from "react";
+import {useState,useEffect, useCallback, useContext} from "react";
 import Shimmer from "./Shimmer";
 import { CARD_API } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import logginInfo from "../utils/UseContext";
 const Body = () =>{
 
     let [hotel,setHotel] = useState([]);
     let [filteredRes,setFilteredRes] = useState([]);
     let [searchText ,setSearchText] = useState("");
-
+    const {setData,names} = useContext(logginInfo);
     useEffect(()=>{
         fetchData();
     },[])
@@ -53,6 +54,15 @@ const Body = () =>{
                     const filtered = hotel.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                     setFilteredRes(filtered);
                 }}>Search</button>
+                <div>
+                    <label>
+                        User Name :
+                    <input className="p-5 rounded-md bg-slate-400 text-white" value={names}
+                    onChange={(e)=>setData(e.target.value)}
+                    ></input>
+                    </label>
+            
+            </div>
             </div>
             
             
@@ -77,7 +87,10 @@ const Body = () =>{
                 }
                 
             </div>
+            
         </div>
+
+      
     )
      
     

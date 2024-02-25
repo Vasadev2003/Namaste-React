@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { lazy,Suspense } from "react";
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
@@ -9,18 +9,32 @@ import Error from "./components/Error"
 import MenuCard from "./components/Menu"
 import { Outlet } from "react-router-dom"
 import { createBrowserRouter,Outlet,RouterProvider }from "react-router-dom"
-
+import logginInfo from "./utils/UseContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import MyCart from "./components/Cart";
 // Swiggy App
 
 
 const AppLayout = () =>{
+
+    const [data,setData] = useState();
+
+    useEffect(()=>{
+        const data = {
+            changedName : "akshay"
+        };
+        setData(data.changedName);
+    },[])
     return(
+        <Provider store={appStore}>
+        <logginInfo.Provider value = {{names : data,setData}}>
         <div className ="bg-indigo-200">
         <Header></Header>
         <Outlet />
         </div>
-        
-       
+        </logginInfo.Provider>
+        </Provider>
     )
 }
 
@@ -57,6 +71,10 @@ const appRouter = createBrowserRouter([
             {
                 path : "/restaurant/:resId",
                 element : <MenuCard />
+            },
+            {
+                path : "/cart",
+                element : <MyCart />
             },
         ],
         errorElement:<Error/>
